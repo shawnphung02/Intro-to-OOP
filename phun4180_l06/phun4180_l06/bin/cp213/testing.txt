@@ -1,0 +1,26 @@
+Test scannerTest
+
+Enter an integer ('Quit' to stop): 
+7
+Enter an integer ('Quit' to stop): 
+asdasd
+This is not an integer!
+Enter an integer ('Quit' to stop): 
+5
+Enter an integer ('Quit' to stop): 
+Quit
+Total: 12
+
+Test stringPrinter
+*****
+
+getMessage:
+Please Enter a Positive Number!
+
+toString:
+java.lang.IllegalArgumentException: Please Enter a Positive Number!
+
+printStackTrace:
+java.lang.IllegalArgumentException: Please Enter a Positive Number!
+	at cp213.Main.stringPrinter(Main.java:89)
+	at cp213.Main.main(Main.java:26)

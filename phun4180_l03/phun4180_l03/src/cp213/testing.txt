@@ -1,0 +1,24 @@
+New Student:
+Name:      Brown, David
+ID:        123456
+Birthdate: 1962-10-25
+----------------------------------------
+Test Getters
+Name:      Brown, David
+ID:        123456
+Birthdate: 1962-10-25
+----------------------------------------
+Test Setters
+Updated Student:
+Name:      Phung, Caine
+ID:        162534
+Birthdate: 1994-12-25
+----------------------------------------
+Test compareTo
+
+New Student:
+Name:      Phung, Shawn
+ID:        567890
+Birthdate: 2002-06-03
+
+Compare: -1

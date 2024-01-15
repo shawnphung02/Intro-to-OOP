@@ -1,0 +1,354 @@
+SingleLink Data Structures Tests
+
+Tests are of the form:
+  Test Operation {expected value}: actual value
+  Contents: [contents from front to rear]
+
+================================================================================
+Testing SingleStack
+----------------------------------------
+SingleStack<Integer> source = new SingleStack<>();
+  isEmpty {true}: true
+----------------------------------------
+Push values: [46, 26, 11, 42, 39, 14, 8]
+  push: 46
+  push: 26
+  push: 11
+  push: 42
+  push: 39
+  push: 14
+  push: 8
+  isEmpty {false}: false
+  peek {8}: 8
+  Contents: [8, 14, 39, 42, 11, 26, 46]
+----------------------------------------
+source.splitAlternate(left, right)
+source
+  isEmpty {true}: true
+  Contents: []
+left
+  isEmpty {false}: false
+  peek {46}: 46
+  Contents: [46, 11, 39, 8]
+right
+  isEmpty {false}: false
+  peek {26}: 26
+  Contents: [26, 42, 14]
+----------------------------------------
+target.combine(left, right)
+target
+  isEmpty {false}: false
+  peek {8}: 8
+  Contents: [8, 14, 39, 42, 11, 26, 46]
+left
+  isEmpty {true}: true
+  Contents: []
+right
+  isEmpty {true}: true
+  Contents: []
+----------------------------------------
+Clear target
+  Pop {8}: 8
+  Pop {14}: 14
+  Pop {39}: 39
+  Pop {42}: 42
+  Pop {11}: 11
+  Pop {26}: 26
+  Pop {46}: 46
+
+================================================================================
+Testing SingleQueue
+----------------------------------------
+SingleQueue<Integer> source = new SingleQueue<>();
+  isEmpty {true}: true
+----------------------------------------
+Insert values: [27, 9, 9, 33, 1, 21, 0]
+  insert: 27
+  insert: 9
+  insert: 9
+  insert: 33
+  insert: 1
+  insert: 21
+  insert: 0
+  isEmpty {false}: false
+  peek {27}: 27
+  Contents: [27, 9, 9, 33, 1, 21, 0]
+----------------------------------------
+source.splitAlternate(left, right)
+source
+  isEmpty {true}: true
+  Contents: []
+left
+  isEmpty {false}: false
+  peek {27}: 27
+  Contents: [27, 9, 1, 0]
+right
+  isEmpty {false}: false
+  peek {9}: 9
+  Contents: [9, 33, 21]
+----------------------------------------
+target.combine(left, right)
+target
+  isEmpty {false}: false
+  peek {27}: 0
+  Contents: [0, 21, 1, 33, 9, 9, 27]
+left
+  isEmpty {true}: true
+  Contents: []
+right
+  isEmpty {true}: true
+  Contents: []
+----------------------------------------
+Clear target
+  remove {27}: 0
+  remove {9}: 21
+  remove {9}: 1
+  remove {33}: 33
+  remove {1}: 9
+  remove {21}: 9
+  remove {0}: 27
+
+================================================================================
+Testing SinglePriorityQueue
+----------------------------------------
+SinglePriorityQueue<Integer> source = new SinglePriorityQueue<>();
+  isEmpty {true}: true
+----------------------------------------
+Insert values: [46, 41, 14, 47, 42, 25, 23]
+  insert: 46
+  insert: 41
+  insert: 14
+  insert: 47
+  insert: 42
+  insert: 25
+  insert: 23
+  isEmpty {false}: false
+  peek {14}: 14
+  Contents: [14, 23, 25, 41, 42, 46, 47]
+----------------------------------------
+source.splitByKey(41, left, right)
+source
+  isEmpty {true}: true
+  Contents: []
+left
+  isEmpty {false}: false
+  peek {14}: 14
+  Contents: [14, 23, 25]
+right
+  isEmpty {false}: false
+  peek {41}: 41
+  Contents: [41, 42, 46, 47]
+----------------------------------------
+target.combine(left, right)
+target
+  isEmpty {false}: false
+  peek {14}: 14
+  Contents: [14, 23, 25, 41, 42, 46, 47]
+left
+  isEmpty {true}: true
+  Contents: []
+right
+  isEmpty {true}: true
+  Contents: []
+----------------------------------------
+Clear target
+  remove {14}: 14
+  remove {23}: 23
+  remove {25}: 25
+  remove {41}: 41
+  remove {42}: 42
+  remove {46}: 46
+  remove {47}: 47
+
+================================================================================
+Testing SingleList
+----------------------------------------
+SingleList<Integer> source = new SingleList<>();
+  isEmpty {true}: true
+----------------------------------------
+Append values: [31, 41]
+  append: 31
+  append: 41
+  isEmpty {false}: false
+  peek {31}: 31
+  Contents: [31]
+----------------------------------------
+prepend: 42
+  isEmpty {false}: false
+  peek {42}: 42
+  Contents: [42]
+----------------------------------------
+Insert values: [31, 41]
+  insert: (1, 33)
+  insert: (2, 43)
+  insert: (3, 18)
+  insert: (4, 38)
+  isEmpty {false}: false
+  peek {42}: 42
+  Contents: [42, 33, 43, 18, 38]
+----------------------------------------
+contains 999 {false}: false
+contains 18 {true}: true
+----------------------------------------
+find 999 {null}: 
+find 18 {18}: 18
+----------------------------------------
+get 3 {18}: 18
+----------------------------------------
+index 18 {3}: 3
+================================================================================
+Testing SingleStack
+----------------------------------------
+SingleStack<Integer> source = new SingleStack<>();
+  isEmpty {true}: true
+----------------------------------------
+Push values: [39, 32, 30, 30, 27, 18, 3]
+  push: 39
+  push: 32
+  push: 30
+  push: 30
+  push: 27
+  push: 18
+  push: 3
+  isEmpty {false}: false
+  peek {3}: 3
+  Contents: [3, 18, 27, 30, 30, 32, 39]
+----------------------------------------
+source.splitAlternate(left, right)
+source
+  isEmpty {true}: true
+  Contents: []
+left
+  isEmpty {false}: false
+  peek {39}: 39
+  Contents: [39, 30, 27, 3]
+right
+  isEmpty {false}: false
+  peek {32}: 32
+  Contents: [32, 30, 18]
+----------------------------------------
+target.combine(left, right)
+target
+  isEmpty {false}: false
+  peek {3}: 3
+  Contents: [3, 18, 27, 30, 30, 32, 39]
+left
+  isEmpty {true}: true
+  Contents: []
+right
+  isEmpty {true}: true
+  Contents: []
+----------------------------------------
+Clear target
+  Pop {3}: 3
+  Pop {18}: 18
+  Pop {27}: 27
+  Pop {30}: 30
+  Pop {30}: 30
+  Pop {32}: 32
+  Pop {39}: 39
+
+================================================================================
+Testing SingleQueue
+----------------------------------------
+SingleQueue<Integer> source = new SingleQueue<>();
+  isEmpty {true}: true
+----------------------------------------
+Insert values: [45, 26, 0, 8, 35, 27, 26]
+  insert: 45
+  insert: 26
+  insert: 0
+  insert: 8
+  insert: 35
+  insert: 27
+  insert: 26
+  isEmpty {false}: false
+  peek {45}: 45
+  Contents: [45, 26, 0, 8, 35, 27, 26]
+----------------------------------------
+source.splitAlternate(left, right)
+source
+  isEmpty {true}: true
+  Contents: []
+left
+  isEmpty {false}: false
+  peek {45}: 45
+  Contents: [45, 0, 35, 26]
+right
+  isEmpty {false}: false
+  peek {26}: 26
+  Contents: [26, 8, 27]
+----------------------------------------
+target.combine(left, right)
+target
+  isEmpty {false}: false
+  peek {45}: 26
+  Contents: [26, 27, 35, 8, 0, 26, 45]
+left
+  isEmpty {true}: true
+  Contents: []
+right
+  isEmpty {true}: true
+  Contents: []
+----------------------------------------
+Clear target
+  remove {45}: 26
+  remove {26}: 27
+  remove {0}: 35
+  remove {8}: 8
+  remove {35}: 0
+  remove {27}: 26
+  remove {26}: 45
+
+================================================================================
+Testing SinglePriorityQueue
+----------------------------------------
+SinglePriorityQueue<Integer> source = new SinglePriorityQueue<>();
+  isEmpty {true}: true
+----------------------------------------
+Insert values: [16, 24, 36, 40, 13, 28, 25]
+  insert: 16
+  insert: 24
+  insert: 36
+  insert: 40
+  insert: 13
+  insert: 28
+  insert: 25
+  isEmpty {false}: false
+  peek {13}: 13
+  Contents: [13, 16, 24, 25, 28, 36, 40]
+----------------------------------------
+source.splitByKey(25, left, right)
+source
+  isEmpty {true}: true
+  Contents: []
+left
+  isEmpty {false}: false
+  peek {13}: 13
+  Contents: [13, 16, 24]
+right
+  isEmpty {false}: false
+  peek {25}: 25
+  Contents: [25, 28, 36, 40]
+----------------------------------------
+target.combine(left, right)
+target
+  isEmpty {false}: false
+  peek {13}: 13
+  Contents: [13, 16, 24, 25, 28, 36, 40]
+left
+  isEmpty {true}: true
+  Contents: []
+right
+  isEmpty {true}: true
+  Contents: []
+----------------------------------------
+Clear target
+  remove {13}: 13
+  remove {16}: 16
+  remove {24}: 24
+  remove {25}: 25
+  remove {28}: 28
+  remove {36}: 36
+  remove {40}: 40
+
